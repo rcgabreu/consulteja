@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulte Já</title>
+    <meta name="description" content="Sistema de leitura de código de barras para produtos de cosméticos">
+    <meta name="keywords" content="cosméticos, código de barras, scanner, maquiagem, cuidados com a pele">
+    
+    <meta property="og:title" content="Scanner de Produtos - Cosméticos">
+    <meta property="og:description" content="Aplicação para consulta de produtos de cosméticos através de código de barras">
+    
+    <meta name="twitter:title" content="Scanner de Produtos - Cosméticos">
+    <meta name="twitter:description" content="Aplicação para consulta de produtos de cosméticos através de código de barras">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    <script src="https://unpkg.com/@ericblade/quagga2@1.8.4/dist/quagga.min.js"></script>
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #E8B4D4;
+            --secondary-color: #C9A4E8;
+            --accent-pink: #FFB3D9;
+            --accent-purple: #B39DDB;
+            --accent-green: #B8E6B8;
+            --accent-yellow: #FFF4A3;
+            --accent-blue: #B3D9FF;
+            --text-dark: #4A4A4A;
+            --text-light: #6B6B6B;
+            --bg-light: #FFF9FC;
+        }
+    }
+
+    @layer base {
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        h1, h2, h3 {
+            color: var(--text-dark);
+        }
+    }
+
+    @layer components {
+        .btn-primary {
+            @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .category-card {
+            @apply p-4 rounded-xl transition-all duration-300 cursor-pointer shadow-md hover:shadow-xl;
+        }
+
+        .product-card {
+            @apply bg-white p-6 rounded-xl shadow-lg;
+        }
+    }
+
+    @layer utilities {
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/ProductCard.js"></script>
+    <script type="text/babel" src="components/ProductRegistration.js"></script>
+    <script type="text/babel" src="components/BarcodeScanner.js"></script>
+    <script type="text/babel" src="utils/database.js"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
